@@ -9,6 +9,7 @@ print("_"*50)
 print("让编程变得更加有趣吧")
 print("Everyone should learn how to code a computer")
 print("3+3")
+
 print("加:",3+3)
 print("减:",3-1)
 print("幂:",3**3)
@@ -103,6 +104,7 @@ print(lst_s)
 print("_"*50)
 lst_s[5]=99
 print("lst_s[5]=99->{}".format(lst_s))
+
 lst_none=lst_s+[None]*6
 print("lst_s+[None]*6->{}".format(lst_none))
 lst_none[13]=2015
@@ -113,11 +115,10 @@ del lst_none[-2:]
 print("del lst_none[-2:]->{}".format(lst_none))
 lst_none[-6:-3]=list(range(100,104,2))
 print("lst_none[-6:-3]=list(rang(100:104:2))->{}".format(lst_none[-6:-3]))
+
 lst_s_2=list(map(chr,range(100,105)))
 print(lst_s_2)
-
 print("_"*50)
-
 lst_s_2.append(99)
 print("lst_s_2.append(99)->{}".format(lst_s_2))
 lst_s_2.append(list(range(50,80,5)))
@@ -150,9 +151,11 @@ print("tuple([5,8,9])->{}".format(tuple([5,8,9])))
 import random
 items=[(0,[i for i in range(5)]),(1,[random.sample(list(range(100,200,1)),3)]),(2,'python')]
 print("items->{}".format(items))
+
 dic=dict(items)
 print("dic[1]->{}".format(dic[1]))
 print("len(dic)->{}".format(len(dic)))
+
 dic[3]=(random.random(),random.uniform(200,300))
 print("dic[3]=(random.random(,random.uniform(200,300))->{}".format(dic))
 del dic[1]
@@ -163,6 +166,55 @@ print("dic.keys()->{}".format(dic.keys()))
 print("dic.items()->{}".format(dic.items()))
 print("_"*50)
 print("list(dic.keys()->{}".format(list(dic.keys())))
+
+lst_A=list(range(6,20,3))
+lst_B=list(range(100,150,15))
+print("lst_A={},lst_B={}".format(lst_A,lst_B))
+dic_2={0:lst_A,1:lst_B}
+print("dic_2={}".format(dic_2))
+print("_"*50)
+dic_assignment=dic_2
+print("dic_assignment={}".format(dic_assignment))
+dic_2.clear()
+print("dic_2.clear()->{}".format(dic_2))
+print("dic_assignment={}".format(dic_assignment))
+dic_2[5]=list(range(1,9,2))
+print("dic_2[5]=list(range(1,9,2))->{}".format(dic_2))
+dic_copy=dic_2.copy()
+print("dic_copy=dic_2.copy()->{}".format(dic_copy))
+dic_2[8]=[5,7]
+print("dic_2[8]=[5,7]->{}".format(dic_2))
+print("dic_copy={}".format(dic_copy))
+dic_copy[5].remove(5)
+print("dic_copy[5].remove(5)->{}".format(dic_copy))
+dic_copy.setdefault(6,[77,99]) #返回指定键的值，如果不存在该键，则字典增加新的键/值对
+print("dic_copy.setdefault(6,[77,99])->{}".format(dic_copy))
+dic_2.pop(5) #移除指定键/值，并返回该值
+print("dic_2.pop(5)->{}".format(dic_2))
+dic_update={8:[5,7,6,3,2],9:[3,2,33,55,66]}
+print("dic_update={}".format(dic_update))
+dic_2.update(dic_update) 
+print("dic_2.update(dic_update->{}".format(dic_2))
+print("dic_2.get(9)->{}".format(dic_2.get(9)))
+dic_2.popitem() 
+print("dic_2.popitem()->{}".format(dic_2))
+
+dic_3={}.fromkeys([0,1,2,3,4,'A']) 
+print("dic_3={}"+".fromkeys([0,1,2,3,4,'A'])->{}".format(dic_3)) 
+
+from string import Template
+s_template_1=Template("$x,glorious,$x!")
+s_1=s_template_1.substitute(x="Python")
+print("s_1=s_template_1.substitute(x=\"Python\")->{}".format(s_1))
+s_template_2=Template("${x}thon is amazing!")
+s_2=s_template_2.substitute(x="py")
+print("s_2=s_template_2.substitute(x=\"py\")->{}".format(s_2))
+s_template_3=Template("$x and $y are both amazing!")
+substitute_dict=dict([('x','Python'),('y','Grasshopper')])
+print("substitute_dict={}".format(substitute_dict))
+s_3=s_template_3.substitute(substitute_dict)
+print("s_3=s_template_3.substitute(substitute_dict)->{}".format(s_3))
+
 
 lst_A=list(range(6,20,3))
 lst_B=list(range(100,150,15))
@@ -184,8 +236,6 @@ dic_copy.setdefault(6,[77,99])
 print("dic_copy.setdefault(6,[77,99])->{}".format(dic_copy))
 dic_3={}.fromkeys([0,1,2,3,4,'A'])
 print("dic_3={}"+".fromkeys([0,1,2,3,4,'A'])->{}".format(dic_3))
-
-
 
 lst_s_3=list("Hello Python!")
 print("lst_s_3=list(\"Hello Python!\")->{}".format(lst_s_3))
@@ -235,6 +285,7 @@ import re
 pattern_1='Python'
 text="Hello Python!"
 print("re.findall(pattern_1,text)->{}".format(re.findall(pattern_1,text)))
+
 pattern_2='python'
 print("re.findall(pattern_2,text)->{}".format(re.findall(pattern_2,text)))
 print("re.findall('.ython','Hello Python!')->{}".format(re.findall('.ython','Hello Python!')))
@@ -383,12 +434,14 @@ a=[1,2]
 b=[3,4]
 c=[5,6]
 d=[7,8]
-
 z=zip(a,b,c,d)
 x=zip(*z)
 
 print(type(x))
 print(list(x))
+
+
+
 
 
     
