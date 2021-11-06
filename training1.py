@@ -187,9 +187,9 @@ print("dic_2[8]=[5,7]->{}".format(dic_2))
 print("dic_copy={}".format(dic_copy))
 dic_copy[5].remove(5)
 print("dic_copy[5].remove(5)->{}".format(dic_copy))
-dic_copy.setdefault(6,[77,99]) #返回指定键的值，如果不存在该键，则字典增加新的键/值对
+dic_copy.setdefault(6,[77,99]) 
 print("dic_copy.setdefault(6,[77,99])->{}".format(dic_copy))
-dic_2.pop(5) #移除指定键/值，并返回该值
+dic_2.pop(5) 
 print("dic_2.pop(5)->{}".format(dic_2))
 dic_update={8:[5,7,6,3,2],9:[3,2,33,55,66]}
 print("dic_update={}".format(dic_update))
